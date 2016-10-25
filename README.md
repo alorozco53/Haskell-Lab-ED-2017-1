@@ -23,16 +23,19 @@ magic :: [String] -> [(String, Int)]
 *Es la función que se vio el viernes 21 de octubre y la cual recibe una lista de cadenas y devuelve*
 *una lista con el último carácter de cada una de las cadenas dadas (sufijo de longitud 1) y un contador*
 *que indica el de a qué cadena corresponde cada sufijo.*
+
 Ejemplo:
 ```shell
 *ToyFunctions> magic ["The","quick","brown","fox","jumps","over","the","lazy","dog"]
 [("e",1),("k",2),("n",3),("x",4),("s",5),("r",6),("e",7),("y",8),("g",9)]
 ```
+======
 
 ```haskell
 magicK :: [String] -> Int -> [(String, Int)]
 ```
 *Es una generalización de la función anterior pero para sufijos de longitud k.*
+
 Ejemplo:
 ```shell
 *ToyFunctions> magicK ["The","quick","brown","fox","jumps","over","the","lazy","dog"] 2
@@ -48,6 +51,8 @@ zip :: [a] -> [b] -> [(a, b)]
 [*Aquí*](http://aprendehaskell.es/content/Empezando.html#tuplas) se encuentra un buen tutorial para entender
 el uso de la función `zip`.
 
+======
+
 ```haskell
 split :: String -> Char -> [String]
 ```
@@ -55,11 +60,14 @@ split :: String -> Char -> [String]
 *Recibe una cadena y un carácter delimitador y devuelve todas las cadenas delimitadas por*
 *dicho carácter. Su comportamiento es *casi* equivalente al de la función [*`words`*](http://www.cse.unsw.edu.au/~en1000/haskell/inbuilt.html#words)*
 *que viene ya dentro del Prelude de Haskell.*
+
 Ejemplo:
 ```shell
 *ToyFunctions> words "The quick brown fox jumps over the lazy dog"
 ["The","quick","brown","fox","jumps","over","the","lazy","dog"]
 ```
+
+======
 
 ```haskell
 initials :: String -> String
@@ -67,6 +75,7 @@ initials :: String -> String
 *Recibe una cadena, la cual se puede uno imaginar como el título de un libro o artículo o de*
 *alguna institución que está bien escrito (con iniciales en mayúsculas).*
 *Devuelve la cadena con dichas iniciales*
+
 Ejemplo:
 ```shell
 *ToyFunctions> initials "Universidad Nacional Autónoma de México"
