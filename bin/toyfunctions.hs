@@ -4,12 +4,12 @@ Maintainer  :  alorozco.patriot53@gmail.com
 Author      :  AlOrozco53
 Stability   :  experimental
 Portability :  portable
-Version     :  0.0
+Version     :  0.1
 
 Some examples of toy functions discussed
 for the 2017-1 Discrete Structures course
 Facultad de Ciencias, UNAM
---}
+-}
 
 module ToyFunctions where
 
