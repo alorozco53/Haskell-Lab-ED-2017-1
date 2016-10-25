@@ -77,5 +77,5 @@ Ejemplo:
 Cabe destacar que es de suma importancia que se indague lo que hacen las funciones `sum`,
 `prod` y `filter`.
 
-Con respecto a ésta última, implementé un *poderoso* filtro para imágenes como las que hemos
-trabajado el cual está en la función `picFilter`.
+Con respecto a ésta última, implementé un *poderoso* **mapeo** para imágenes como las que hemos
+trabajado el cual está en la función `picMapping`.

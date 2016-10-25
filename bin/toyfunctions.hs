@@ -77,13 +77,13 @@ initials title = [x | x <- title, elem x ['A'..'Z']]
 
 -- Pictures
 
--- A basic picture filter given a function and an image
-picFilter :: (Picture -> Picture) -> Picture -> Picture
-picFilter f p = case p of
+-- A basic picture mapping function, given another function and an image
+picMapping :: (Picture -> Picture) -> Picture -> Picture
+picMapping f p = case p of
                   Img image -> f $ Img image
-                  Above p1 p2 -> Above (picFilter f p1) (picFilter f p2)
-                  Beside p1 p2 -> Beside (picFilter f p1) (picFilter f p2)
-                  Over p1 p2 -> Over (picFilter f p1) (picFilter f p2)
-                  FlipH p -> FlipH $ picFilter f p
-                  FlipV p -> FlipV $ picFilter f p
-                  Invert p -> Invert $ picFilter f p
+                  Above p1 p2 -> Above (picMapping f p1) (picMapping f p2)
+                  Beside p1 p2 -> Beside (picMapping f p1) (picMapping f p2)
+                  Over p1 p2 -> Over (picMapping f p1) (picMapping f p2)
+                  FlipH p -> FlipH $ picMapping f p
+                  FlipV p -> FlipV $ picMapping f p
+                  Invert p -> Invert $ picMapping f p
