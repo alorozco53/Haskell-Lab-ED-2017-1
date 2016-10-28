@@ -21,4 +21,4 @@ El archivo `datatypes_rec.hs` contiene:
 - Implementación de la función `myDrop`
 - Tres implementaciones de la función `myDropLast`
 - Números naturales
-- Ejemplos con geometría (útiles para la práctica 4)
+- Ejemplos con geometría (útiles para la práctica 5)
