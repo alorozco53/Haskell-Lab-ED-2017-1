@@ -1,5 +1,5 @@
 {- |
-Module      :  TypesAndRecursion
+Module      :  BinaryTreesAndHOF
 Maintainer  :  alorozco.patriot53@gmail.com
 Author      :  AlOrozco53
 Stability   :  experimental
@@ -8,11 +8,10 @@ Version     :  0.1
 
 Some examples for the 2017-1 Discrete Structures course.
 Taught at Facultad de Ciencias, UNAM.
-Topics mainly include natural numbers, lists, and geometry
-recursive examples
+Topics mainly include binary trees and higher order functions.
 -}
 
-module TypesAndRecursion where
+module BinaryTreesAndHOF where
 
 import PicturesSVG
 
@@ -29,20 +28,6 @@ picMapping f p = case p of
                   FlipV p -> FlipV $ picMapping f p
                   Invert p -> Invert $ picMapping f p
 
--- Natural numbers
-
-data Nat = Zero | Succ Nat  deriving (Show, Eq)
-
-sumNat :: Nat -> Nat -> Nat
-sumNat Zero m = m
-sumNat (Succ n) m = sumNat n (Succ m) 
--- sumNat (Succ n) m = Succ $ sumNat n m
-
-greaterThan :: Nat -> Nat -> Bool
-greaterThan Zero _ = False
-greaterThan (Succ n) m = case m of
-                           Zero -> True
-                           Succ y -> greaterThan n y
 
 -- Binary trees
 
