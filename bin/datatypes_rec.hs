@@ -4,7 +4,7 @@ Maintainer  :  alorozco.patriot53@gmail.com
 Author      :  AlOrozco53
 Stability   :  experimental
 Portability :  portable
-Version     :  0.1
+Version     :  0.2
 
 Some examples for the 2017-1 Discrete Structures course.
 Taught at Facultad de Ciencias, UNAM.
@@ -14,20 +14,6 @@ recursive examples
 
 module TypesAndRecursion where
 
-import PicturesSVG
-
--- Pictures
-
--- A basic picture mapping function, given another function and an image
-picMapping :: (Picture -> Picture) -> Picture -> Picture
-picMapping f p = case p of
-                  Img image -> f $ Img image
-                  Above p1 p2 -> Above (picMapping f p1) (picMapping f p2)
-                  Beside p1 p2 -> Beside (picMapping f p1) (picMapping f p2)
-                  Over p1 p2 -> Over (picMapping f p1) (picMapping f p2)
-                  FlipH p -> FlipH $ picMapping f p
-                  FlipV p -> FlipV $ picMapping f p
-                  Invert p -> Invert $ picMapping f p
 
 -- Natural numbers
 
@@ -43,3 +29,48 @@ greaterThan Zero _ = False
 greaterThan (Succ n) m = case m of
                            Zero -> True
                            Succ y -> greaterThan n y
+                           
+-- A dummy natural number generator
+numGenerator :: Int -> Nat
+numGenerator n
+  | n < 0 = error "cannot generate a non-negative integer out of a negative!!"
+  | otherwise = head $ reverse $ take (n+1) (iterate Succ Zero)
+
+
+-- Lists
+
+myDrop :: Nat -> [a] -> [a]
+myDrop Zero l = l
+myDrop (Succ n) l = case l of
+                      [] -> l
+                      (_:xs) -> myDrop n xs
+
+myDropLast1 :: Int -> [a] -> [a]
+myDropLast1 n l = take ((length l) - n) l
+
+myDropLast2 :: Nat -> [a] -> [a]
+myDropLast2 n l = reverse p
+  where p = myDrop n (reverse l)
+
+
+-- Geometry
+
+type Coord = (Double, Double)
+
+type LineSegment = (Coord, Coord)
+
+data Polygon = Triangle Coord Coord Coord
+             | Rectangle Coord Coord Coord Coord
+             | ConvexPolygon [LineSegment]
+             deriving (Show, Eq)
+
+isRightTriangle :: Polygon -> Bool
+isRightTriangle (Triangle _ _ _) = error "not my duty to implement this!"
+isRightTriangle (Rectangle _ _ _ _) = error "not my duty to implement this!"
+isRightTriangle (ConvexPolygon lineList) = if length lineList == 3
+                                           then isRightTriangle $ Triangle v1 v2 v3
+                                           else False
+  where
+    v1 = fst $ lineList !! 1
+    v2 = fst $ lineList !! 2
+    v3 = fst $ lineList !! 3

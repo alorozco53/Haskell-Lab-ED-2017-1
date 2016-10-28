@@ -19,6 +19,6 @@ ghci datatypes_rec.hs
 El archivo `datatypes_rec.hs` contiene:
 
 - Implementación de la función `myDrop`
-- Tres implementaciones de la función `myDropLast`
+- Dos implementaciones de la función `myDropLast`
 - Números naturales
 - Ejemplos con geometría (útiles para la práctica 5)
