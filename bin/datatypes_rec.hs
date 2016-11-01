@@ -19,17 +19,21 @@ module TypesAndRecursion where
 
 data Nat = Zero | Succ Nat  deriving (Show, Eq)
 
+-- Natural number addition
 sumNat :: Nat -> Nat -> Nat
 sumNat Zero m = m
 sumNat (Succ n) m = sumNat n (Succ m) 
 -- sumNat (Succ n) m = Succ $ sumNat n m
 
+-- Decides if the first parameter n is STRICTLY greater than the
+-- second parameter m; that is, n < m
 greaterThan :: Nat -> Nat -> Bool
 greaterThan Zero _ = False
 greaterThan (Succ n) m = case m of
                            Zero -> True
                            Succ y -> greaterThan n y
-                           
+
+
 -- A dummy natural number generator
 numGenerator :: Int -> Nat
 numGenerator n
@@ -39,6 +43,8 @@ numGenerator n
 
 -- Lists
 
+-- Three implementation for the haskell "drop"
+-- function. The first one uses Nat instead of Int.
 myDrop :: Nat -> [a] -> [a]
 myDrop Zero l = l
 myDrop (Succ n) l = case l of
@@ -64,6 +70,7 @@ data Polygon = Triangle Coord Coord Coord
              | ConvexPolygon [LineSegment]
              deriving (Show, Eq)
 
+-- Shows how to "parse" a ConvexPolygon to a Triangle
 isRightTriangle :: Polygon -> Bool
 isRightTriangle (Triangle _ _ _) = error "not my duty to implement this!"
 isRightTriangle (Rectangle _ _ _ _) = error "not my duty to implement this!"

@@ -18,7 +18,31 @@ ghci datatypes_rec.hs
 
 El archivo `datatypes_rec.hs` contiene:
 
-- Implementación de la función `myDrop`
-- Dos implementaciones de la función `myDropLast`
 - Números naturales
-- Ejemplos con geometría (útiles para la práctica 5)
+
+  - Suma de naturales
+
+    ```haskell
+    sumNat :: Nat -> Nat -> Nat
+    ```
+
+  - Dados dos números naturales n y m; predicado que decide si n < m.
+
+    ```haskell
+    greaterThan :: Nat -> Nat -> Bool
+    ```
+
+- Implementación de la función `myDrop`
+
+  - La primera función implementada tiene la siguiente firma:
+  
+  ```haskell
+  myDrop :: Nat -> [a] -> [a]
+  ```
+  
+  Es decir, usa los números naturales en vez de enteros. (Esto para fines de poner
+  a **prueba** nuestra implementación de naturales.)
+  
+- Dos implementaciones de la función `myDropLast`
+
+- Un ejemplo útil con geometría (útiles para la práctica 5)
