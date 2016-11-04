@@ -31,7 +31,7 @@ la clase `Show` (la cual permite que un tipo sea impreso en la terminal al conve
   Esta función es la que se revisó en clase e imprime listas en el estilo
   `1 :(2 :(3 :[]))`.
 
----
+
 
 - 
   ```haskell
@@ -64,7 +64,7 @@ y construir cualquier `MyList a` en la terminal:
   Nos brinda la altura de un árbol binario. Recordemos que, bajo nuestra definición, la altura de una
   sola _hoja_ es 1 (ya que tiene dos hijos nulos) y la altura de un árbol `BTNil` es 0.
 
----
+
 
 - 
   ```haskell
@@ -72,7 +72,7 @@ y construir cualquier `MyList a` en la terminal:
   ```
   Inserta un elemento a un árbol binario dado de acuerdo a un [árbol binario de búsqueda](https://www.cs.usfca.edu/~galles/visualization/BST.html).
   
----
+
 
   ```haskell
   insertListBST :: (Ord a) => [a] -> BinTree a -> BinTree a
@@ -80,7 +80,7 @@ y construir cualquier `MyList a` en la terminal:
   Inserta todos los elementos de la lista dada en el árbol binario dado (BST). Ojo, esta función
   es **un regalo**.
   
----
+
   
 - 
   ```haskell
@@ -99,7 +99,7 @@ y construir cualquier `MyList a` en la terminal:
   ```
   Solución elegante al problema dejado en la práctica 5.
 
----
+
 
 - 
   ```haskell
