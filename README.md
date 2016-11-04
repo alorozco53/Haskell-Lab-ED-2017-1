@@ -66,8 +66,8 @@ y construir cualquier `MyList a` en la terminal:
   ```haskell
   insertBST :: (Ord a) =>  a -> BinTree a -> BinTree a
   ```
-  Inserta un elemento a un árbol binario dado de acuerdo a un 
-  [árbol binario de búsqueda](https://www.cs.usfca.edu/~galles/visualization/BST.html).
+  Inserta un elemento a un árbol binario dado de acuerdo a un **árbol binario de búsqueda**.
+  https://www.cs.usfca.edu/~galles/visualization/BST.html
   
 -
   ```haskell
