@@ -90,9 +90,7 @@ data Polygon = Triangle Coord Coord Coord
 -- Decides if a Polygon is a (valid) triangle
 isTriangle :: Polygon -> Bool
 isTriangle (Triangle a b c)
-  | fst a == fst b = False
-  | fst b == fst c = False
-  | fst c == fst a = False
+  | fst a == fst b && fst b == fst c = False
   | otherwise = not $ (m a b) == (m a c)
   where
     m s t = ((snd s) - (snd t)) / ((fst s) - (fst t))
