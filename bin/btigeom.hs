@@ -91,6 +91,9 @@ data Polygon = Triangle Coord Coord Coord
 isTriangle :: Polygon -> Bool
 isTriangle (Triangle a b c)
   | fst a == fst b && fst b == fst c = False
+  | a == b = False
+  | b == c = False
+  | c == a = False
   | otherwise = not $ (m a b) == (m a c)
   where
     m s t = ((snd s) - (snd t)) / ((fst s) - (fst t))
