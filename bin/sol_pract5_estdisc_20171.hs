@@ -183,20 +183,30 @@ kNN p list k = [neigh | neigh <- list, (coordDistance p (fst neigh)) <= k]
 
 -- Listas
 
+-- Toma los primeros elementos de la lista pasada como
+-- segundo argumento de acuerdo al primer argumento
 myTake :: Int -> [a] -> [a]
 myTake 0 _ = []
 myTake k list = case list of
                   [] -> []
                   (x:xs) -> [x] ++ (myTake (k-1) xs) 
 
+-- Cuenta cuántas veces se repite el primer argumento en la lista dada
 myCount :: Eq a => a -> [a] -> Int
 myCount _ [] = 0
 myCount e (x:xs) = if x == e
                    then 1 + (myCount e xs)
                    else myCount e xs
 
+-- Obtiene una lista que indica cuántas veces se repiten
+-- los elementos de la lista dada
 myFreq :: Eq a => [a] -> [(a, Int)]
 myFreq list = [(e, myCount e list) | e <- list]
 
+-- "Comprime" la cadena dada concetenando los primeros
+-- carácteres de cada palabra
 dumbCompress :: String -> String
-dumbCompress _ = error "missing implementation!"
+dumbCompress str = aux $ words str
+  where
+    aux [] = []
+    aux (x:xs) = [head x] ++ (aux xs)
